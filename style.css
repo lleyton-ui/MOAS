@@ -1,45 +1,74 @@
-/* Color Variables for easy updates */
+/* --- Root Variables & Theme --- */
 :root {
     --blue: #1a2a6c;
-    --gold: #d4af37;
+    --gold: #b38f00; /* Matching your logo design gold */
     --light-gold: #fdf5e6;
     --white: #ffffff;
     --text-dark: #333;
     --bg-light: #f9f9f9;
 }
 
+/* --- Global Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body { 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-    margin: 0; 
     color: var(--text-dark); 
     background-color: var(--bg-light); 
     line-height: 1.6;
+    overflow-x: hidden; /* Prevents horizontal scrolling on small phones */
 }
 
-/* Header & Logo Area */
-header { 
-    background: var(--white); 
-    text-align: center; 
-    padding: 2.5rem 0; 
-    border-bottom: 4px solid var(--gold); 
+/* --- Header & Logos --- */
+.main-header {
+    background-color: var(--white);
+    padding: 20px 10px;
+    border-bottom: 3px solid var(--gold);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px; 
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-text {
+    text-align: center;
 }
 
 .cathedral-name {
     color: var(--blue);
     font-size: 1.1rem;
-    margin: 0;
     font-weight: 600;
+    margin-bottom: 5px;
 }
 
 .logo-text { 
     color: var(--blue); 
-    margin: 5px 0 0 0; 
     letter-spacing: 3px; 
     text-transform: uppercase; 
     font-size: 2.2rem;
+    margin: 0;
 }
 
-/* Navigation Bar */
+.header-logo {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%; 
+    object-fit: contain;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border: 2px solid var(--gold);
+}
+
+/* --- Navigation Bar --- */
 nav { 
     background: var(--white); 
     padding: 1rem; 
@@ -53,152 +82,100 @@ nav {
 nav a { 
     text-decoration: none; 
     color: var(--blue); 
-    margin: 0 18px; 
+    margin: 0 15px; 
     font-weight: bold; 
     text-transform: uppercase;
     font-size: 0.9rem;
     transition: 0.3s; 
 }
 
-nav a:hover { 
+nav a:hover, nav a.active { 
     color: var(--gold); 
 }
 
 nav a.active { 
     border-bottom: 2px solid var(--gold); 
-    color: var(--gold); 
 }
 
-/* Layout Containers */
+/* --- Full Background Hero (Home Page) --- */
+.hero-background {
+    /* Ensure image name matches exactly */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('images/group.png');
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+}
+
+.hero-background h1 {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    margin: 0;
+    letter-spacing: 5px;
+}
+
+.hero-background p {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    font-style: italic;
+    margin: 20px 0 40px;
+}
+
+/* --- General Layout Containers --- */
 .container { 
     display: flex; 
     gap: 30px; 
     padding: 40px 20px; 
-    max-width: 1100px; 
+    max-width: 1200px; 
     margin: auto; 
     flex-wrap: wrap; 
+    justify-content: center;
 }
 
-.hero { 
-    background: var(--light-gold); 
-    padding: 80px 20px; 
-    text-align: center; 
-    border: 1px solid var(--gold); 
-    margin: 20px auto; 
-    max-width: 1060px;
-    border-radius: 8px; 
-}
-
-.hero h1 { 
-    color: var(--blue); 
-    font-size: 3rem; 
-    margin: 0;
-}
-
-/* Cards & Content */
 .card { 
     flex: 1; 
     min-width: 300px; 
     background: white; 
     padding: 30px; 
-    border: 1px solid #eee; 
     border-top: 6px solid var(--gold); 
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-.card h2, .card h3 { color: var(--blue); margin-top: 0; }
+/* --- Members Page Elements --- */
+.org-chart { text-align: center; padding: 40px 20px; }
 
-/* Table Style for Events */
-table { width: 100%; border-collapse: collapse; margin-top: 20px; background: white; }
-th { background: var(--blue); color: white; padding: 15px; text-align: left; }
-td { padding: 15px; border-bottom: 1px solid #eee; }
-
-/* Contact Form */
-input, textarea { 
-    padding: 12px; 
-    border: 1px solid #ccc; 
-    border-radius: 4px; 
-    font-size: 1rem;
+.member-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
 }
 
-button { 
-    background: var(--blue); 
-    color: white; 
-    padding: 12px; 
-    border: none; 
-    border-radius: 4px; 
-    cursor: pointer; 
-    font-weight: bold;
-    transition: 0.3s;
+.member-card { 
+    width: 200px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-button:hover { background: var(--gold); }
-
-/* Footer */
-footer { 
-    background: var(--blue); 
-    color: white; 
-    text-align: center; 
-    padding: 30px; 
-    margin-top: 60px; 
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid var(--gold);
+    object-fit: cover;
+    margin-bottom: 15px;
+    background-color: #eee;
 }
 
-/* Hero Image Styling */
-.hero-image-container {
-    position: relative;
-    max-width: 1000px;
-    margin: 30px auto;
-    padding: 0 20px;
-}
-
-.main-hero-img {
-    width: 55%;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.hero-overlay-text {
-    position: absolute;
-    bottom: 40px;
-    left: 60px;
-    color: white;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
-}
-
-.hero-overlay-text h2 {
-    font-size: 2rem;
-    font-family: 'Georgia', serif;
-    font-style: italic;
-    margin: 0;
-}
-
-.hero-overlay-text h1 {
-    font-size: 4rem;
-    margin: -10px 0 0 0;
-}
-
-/* Adjustments for mobile phones */
-@media (max-width: 768px) {
-    .hero-overlay-text {
-        bottom: 20px;
-        left: 30px;
-    }
-    .hero-overlay-text h2 { font-size: 1.2rem; }
-    .hero-overlay-text h1 { font-size: 2.5rem; }
-}
-
-/* CTA Container */
-.cta-container {
-    text-align: center;
-    padding: 40px 20px;
-}
-
-/* Join Now Button Styling */
+/* --- Buttons --- */
 .join-btn {
     display: inline-block;
     background-color: var(--blue);
@@ -210,7 +187,7 @@ footer {
     border-radius: 5px;
     border: 2px solid var(--gold);
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    text-align: center;
 }
 
 .join-btn:hover {
@@ -219,44 +196,131 @@ footer {
     transform: translateY(-3px);
 }
 
-.main-header {
-    background-color: #ffffff;
-    padding: 20px 0;
-    border-bottom: 3px solid #b38f00; /* Gold accent line from your design */
+/* --- Footer --- */
+footer { 
+    background: var(--blue); 
+    color: white; 
+    text-align: center; 
+    padding: 30px; 
+    margin-top: 60px; 
 }
 
-.header-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px; /* Space between the text and logos */
-    max-width: 1200px;
-    margin: 0 auto;
-}
+/* --- MOBILE RESPONSIVE ADJUSTMENTS --- */
 
-.header-text {
-    text-align: center;
-}
-
-.header-logo {
-    width: 90px;  /* Size based on your reference images */
-    height: 90px;
-    border-radius: 50%; /* Creates the circular effect */
-    object-fit: contain;
-    background-color: #fff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
-}
-
-/* Mobile Responsive Adjustments */
 @media (max-width: 768px) {
+    /* Header stacks logos and text */
     .header-container {
+        flex-direction: column;
         gap: 15px;
     }
+    
     .header-logo {
-        width: 60px;
-        height: 60px;
+        width: 70px;
+        height: 70px;
     }
+
     .logo-text {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
+        letter-spacing: 1px;
     }
+
+    /* Navigation wrapping */
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        margin: 5px 10px;
+        font-size: 0.8rem;
+    }
+
+    /* Cards stack vertically */
+    .card {
+        min-width: 100%;
+    }
+
+    /* Member grid adjustments */
+    .member-card {
+        width: 45%; /* Two members per row on tablets/small screens */
+    }
+
+    .profile-pic {
+        width: 110px;
+        height: 110px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Smaller text for small phones */
+    .cathedral-name { font-size: 0.8rem; }
+    .logo-text { font-size: 1.1rem; }
+    
+    .member-card {
+        width: 100%; /* One member per row on very small phones */
+    }
+}
+
+/* --- Centering the Home Page Hero --- */
+.hero-background {
+    /* This ensures the background image and overlay are centered */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertically */
+    align-items: center;     /* Centers horizontally */
+    text-align: center;      /* Centers text */
+    
+    min-height: 80vh;        /* Adjust height as needed */
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- Centering the Main Hero Image (if using an <img> tag) --- */
+.main-hero-img {
+    width: 100%;             /* Responsive width */
+    max-width: 800px;        /* Limits size on large screens */
+    height: auto;
+    display: block;          /* Allows margin auto to work */
+    margin: 20px auto;       /* Centers the image horizontally */
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* --- Layout Containers for Mission/Announcements --- */
+.container { 
+    display: flex; 
+    justify-content: center; /* Centers the cards horizontally */
+    align-items: flex-start;
+    gap: 30px; 
+    padding: 40px 20px; 
+    max-width: 1200px; 
+    margin: 0 auto;         /* Centers the container itself */
+    flex-wrap: wrap; 
+}
+
+.cta-container {
+    display: flex;            /* Enables flexbox */
+    justify-content: center;   /* Centers the button horizontally */
+    align-items: center;       /* Ensures vertical alignment */
+    width: 100%;               /* Ensures it takes the full width of the screen */
+    padding: 40px 20px;        /* Matches your design spacing */
+    margin: 0 auto;            /* Additional centering safety */
+}
+
+/* Join Now Button Styling */
+.join-btn {
+    display: inline-block;
+    background-color: var(--blue); /* Uses your ministry blue */
+    color: var(--white);
+    padding: 15px 50px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 2px solid var(--gold); /* Uses your ministry gold */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    text-align: center; /* Ensures text inside button is centered */
 }
