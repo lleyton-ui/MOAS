@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events | MOAS Cathedral</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .events-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .event-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .event-header h2 {
+            color: var(--blue);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        /* Featured Event Card */
+        .featured-event {
+            display: flex;
+            background: white;
+            border: 1px solid #ddd;
+            border-left: 8px solid var(--gold);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .event-date-box {
+            background: var(--blue);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            min-width: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .event-date-box .day { font-size: 2.5rem; font-weight: bold; line-height: 1; }
+        .event-date-box .month { text-transform: uppercase; letter-spacing: 2px; }
+
+        .event-details { padding: 30px; flex: 1; }
+        .event-details h3 { color: var(--blue); margin-top: 0; font-size: 1.5rem; }
+        .event-details p { color: #555; margin: 10px 0; }
+        
+        .event-meta { font-size: 0.9rem; color: var(--gold); font-weight: bold; text-transform: uppercase; }
+
+        /* Upcoming List */
+        .upcoming-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .mini-event-card {
+            background: var(--light-gold);
+            padding: 20px;
+            border-radius: 5px;
+            border-bottom: 3px solid var(--blue);
+        }
+
+        .mini-event-card h4 { color: var(--blue); margin: 0 0 10px 0; }
+    </style>
+</head>
+<body>
+
+<header class="main-header">
+    <div class="header-container">
+        <img src="images/logo.jpg" alt="Metropolitan Cathedral Seal" class="header-logo">
+        
+        <div class="header-text">
+            <p class="cathedral-name">METROPOLITAN CATHEDRAL of SAN FERNANDO</p>
+            <h1 class="logo-text">Ministry of Altar Servers</h1>
+        </div>
+        
+        <img src="images/logo1.jpg" alt="MOAS Official Emblem" class="header-logo">
+    </div>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="members.html">Members</a>
+    <a href="events.html" class="active">Events</a>
+    <a href="contact.html">Contact Us</a>
+</nav>
+
+<div class="events-container">
+    <div class="event-header">
+        <h2>Ministry Calendar</h2>
+        <p>Stay updated with our formations, meetings, and liturgical services.</p>
+    </div>
+
+    <h3 style="color: var(--gold); text-transform: uppercase; letter-spacing: 1px;">Major Event</h3>
+    <div class="featured-event">
+        <div class="event-date-box">
+            <span class="month">Aug</span>
+            <span class="day">15</span>
+        </div>
+        <div class="event-details">
+            <span class="event-meta">Liturgical Feast</span>
+            <h3>Vicariate Day</h3>
+            <p></p>
+            <p><strong>#</strong>#</p>
+        </div>
+    </div>
+
+    <h3 style="color: var(--gold); text-transform: uppercase; letter-spacing: 1px;">Upcoming Activities</h3>
+    <div class="upcoming-list">
+        <div class="mini-event-card">
+            <span class="event-meta">Feb 10</span>
+            <h4>General Formation Meeting</h4>
+            <p>Monthly meeting for all members to discuss upcoming liturgical assignments.</p>
+        </div>
+
+        <div class="mini-event-card">
+            <span class="event-meta">Mar 15-17</span>
+            <h4>Annual Lenten Retreat</h4>
+            <p>A three-day spiritual journey for the brotherhood at the Retreat House.</p>
+        </div>
+
+        <div class="mini-event-card">
+            <span class="event-meta">Every Saturday</span>
+            <h4>Weekly Practice</h4>
+            <p>Regular practice for Junior Servers starting at 1:00 PM.</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 MOAS - Metropolitan Cathedral of San Fernando</p>
+</footer>
+
+</body>
+</html>

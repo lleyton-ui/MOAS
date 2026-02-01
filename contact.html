@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | MOAS Cathedral</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .contact-page-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 50px;
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .contact-text-content {
+            flex: 1;
+            text-align: left;
+        }
+
+        .contact-visuals {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .visual-frame {
+            border: 4px solid var(--gold);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .visual-frame img, .visual-frame iframe {
+            width: 100%;
+            display: block;
+        }
+
+        .info-header {
+            color: var(--blue);
+            border-left: 5px solid var(--gold);
+            padding-left: 15px;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        .detail-group { margin-bottom: 25px; }
+
+        .detail-label {
+            color: var(--gold);
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .detail-value {
+            font-size: 1.1rem;
+            color: #333;
+            margin: 0;
+        }
+
+        /* Facebook Button */
+        .fb-btn {
+            display: inline-flex;
+            align-items: center;
+            background-color: var(--blue);
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .fb-btn:hover {
+            background-color: white;
+            color: var(--blue);
+            border-color: var(--gold);
+        }
+
+        @media (max-width: 850px) {
+            .contact-page-wrapper { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="main-header">
+    <div class="header-container">
+        <img src="images/logo.jpg" alt="Metropolitan Cathedral Seal" class="header-logo">
+        
+        <div class="header-text">
+            <p class="cathedral-name">METROPOLITAN CATHEDRAL of SAN FERNANDO</p>
+            <h1 class="logo-text">Ministry of Altar Servers</h1>
+        </div>
+        
+        <img src="images/logo1.jpg" alt="MOAS Official Emblem" class="header-logo">
+    </div>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="members.html">Members</a>
+    <a href="events.html">Events</a>
+    <a href="contact.html" class="active">Contact Us</a>
+</nav>
+
+<div class="contact-page-wrapper">
+    
+    <div class="contact-text-content">
+        <h2 class="info-header">Get in Touch</h2>
+
+        <div class="detail-group">
+            <p class="detail-label">Location</p>
+            <p class="detail-value">Metropolitan Cathedral of San Fernando</p>
+            <p class="detail-value">City of San Fernando, Pampanga</p>
+        </div>
+
+        <div class="detail-group">
+            <p class="detail-label">Email Address</p>
+            <p class="detail-value">moas.cathedral@example.com</p>
+        </div>
+
+        <div class="detail-group">
+            <p class="detail-label">Social Media</p>
+            <p class="detail-value">Facebook: Ministry of Altar Servers - Metropolitan Cathedral of San Fernando</p>
+            <a href="https://www.facebook.com/MOASMCSF" target="_blank" class="fb-btn">
+                Visit Facebook Page
+            </a>
+        </div>
+
+        <div class="detail-group">
+            <p class="detail-label">Office Hours</p>
+            <p class="detail-value">Saturdays: 1:00 PM - 5:00 PM</p>
+            <p class="detail-value">Sundays: 8:00 AM - 12:00 PM</p>
+        </div>
+    </div>
+
+        <div class="visual-frame">
+            <img src="images/group1.png" alt="MOAS Group">
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p>&copy; 2026 MOAS - Metropolitan Cathedral of San Fernando</p>
+</footer>
+
+</body>
+</html>
